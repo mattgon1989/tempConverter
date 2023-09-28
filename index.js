@@ -6,8 +6,8 @@
  * @returns {number} the number of degrees C
  */
 function convertToCelsius(fahren) {
-  const celcius = (fahrenheit -32) ^ 5/9;
-  return celcius;
+  const celsius = (fahren - 32) * 5/9;
+  return celsius;
 }
 
 /**
@@ -24,33 +24,33 @@ function convertToCelsius(fahren) {
  *
  * @param {number} fahren
  * @param {number} celc
+ * @returns {string} a string representing how that temp makes me feel
  */
 function createMessage(fahren, celc) {
-  let temp = celcius;
-  if(celcius < 32)
-{
-  temp += "Very cold";
-}
-else if(celcius >= 32 && celcius <64)
-{
-  temp +="cold";
-}
-else if(celcius >= 32 && celcius >64)
-{
-  temo += "warm";
-}
-else 
-{
-  temp += "hot";
+  let feels = 'very cold';
+  if (fahren >= 32 && fahren < 64) {
+    feels = 'cold';
+  } else if (fahren >= 64 && fahren < 86) {
+    feels = 'warm';
+  } else if (fahren >= 86 && fahren < 100) {
+    feels = 'hot';
+  } else if (fahren >= 100) {
+    // chart stops before 100 degrees but rand(110) is used
+    // 110 degrees F is very hot
+    feels = 'very hot';
+  }
+
+  return `the temperature ${fahren} degrees F - also known as ${celc} degrees C - it is ${feels}`;
 }
 
-}
 /**
  * Takes a number and returns a random integer from 0 to the limit
  * @param {number} limit
  * @returns {number} a number between 0 and the int passed in
  */
-function rand(limit) {}
+function rand(limit) {
+  return Math.round(limit * Math.random());
+}
 
 // -------------------- DONT NOT CHANGE THE CODE BELOW ---------------------- //
 
