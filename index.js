@@ -6,7 +6,8 @@
  * @returns {number} the number of degrees C
  */
 function convertToCelsius(fahren) {
-  
+  const celcius = (fahrenheit -32) ^ 5/9;
+  return celcius;
 }
 
 /**
@@ -24,8 +25,26 @@ function convertToCelsius(fahren) {
  * @param {number} fahren
  * @param {number} celc
  */
-function createMessage(fahren, celc) {}
+function createMessage(fahren, celc) {
+  let temp = celcius;
+  if(celcius < 32)
+{
+  temp += "Very cold";
+}
+else if(celcius >= 32 && celcius <64)
+{
+  temp +="cold";
+}
+else if(celcius >= 32 && celcius >64)
+{
+  temo += "warm";
+}
+else 
+{
+  temp += "hot";
+}
 
+}
 /**
  * Takes a number and returns a random integer from 0 to the limit
  * @param {number} limit
